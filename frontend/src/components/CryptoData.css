@@ -1,0 +1,98 @@
+.main {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.coin-row-cd {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid #37ff00;
+  width: 80vw;
+  background-color: #a0ffd4;
+  color: #000000;
+}
+
+.coin-row-cd p {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.lastfinalized {
+  position: absolute;
+  top: 100px;
+  right: 113px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #8eeded;
+  width: 300px;
+  height: 50px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.logout {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  padding: 15px 37px;
+  background-color: rgb(0, 163, 24);
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.logout:hover {
+  background-color: darkgreen;
+}
+
+.welcome {
+  text-align: left;
+  color: #ffffff;
+  font-style: Varela Round;
+  font-family: 'varela-round';
+  font-size: 40px;
+  text-align: center;
+}
+
+.green {
+  color: rgb(47, 220, 47);
+  font: Sans-serif;
+}
+
+.red {
+  color: red;
+}
+
+.search {
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 15px;
+}
+
+.mainpara {
+  position: absolute;
+  top: 40%;
+  font-size: 20px;
+}
