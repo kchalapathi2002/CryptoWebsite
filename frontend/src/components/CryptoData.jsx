@@ -33,7 +33,7 @@ const CryptoData = () => {
       try {
         const block = await axios.get('http://localhost:5000/finalized');
         if (!_.isEqual(block.data, prevblock.current)) {
-          console.log(block.data);
+          //console.log(block.data);
           setBlock(block.data);
           prevblock.current = block.data;
         }
@@ -113,7 +113,7 @@ const CryptoData = () => {
 
           <div className={status === 'true' ? 'green' : 'red'}>{status === 'true' ? (
             <h2>Live Data</h2>
-          ) : (<h2>Last Updated at:{time}</h2>)}
+          ) : (<h2>Last Updated at: {time}</h2>)}
           </div>
 
           <div className='lastfinalized'>

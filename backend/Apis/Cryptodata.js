@@ -1,6 +1,5 @@
 const express = require('express');
 const { fetchCoinData } = require('./functions/fromCoinGecko');
-const { getLatestBlockNumber } = require('./functions/Finalizedblock');
 
 const router = express.Router();
 
@@ -17,13 +16,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/finalized', async (req, res) => {
-  try {
-    const blockvalue = await getLatestBlockNumber();
-    res.send(blockvalue);
-  } catch (error) {
-    res.json({ message: 'Error fetching block value' });
-  }
-});
+
 
 module.exports = router;

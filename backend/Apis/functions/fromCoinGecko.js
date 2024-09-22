@@ -47,8 +47,6 @@ async function fetchCoinData(sortdata, sortvalue, filter1) {
 
   }
   catch (error) {
-    console.log('catch block');
-
     const lastUpdated = (await setTime.findOne({ fieldfor: 'cryptodata' })).timeStamp;
     if (sortvalue == 0) {
       let result = await newCoin.find();
