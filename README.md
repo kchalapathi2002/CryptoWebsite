@@ -40,8 +40,11 @@ File structure defining important files:
   - `index.css`
 
 Prerequisite for running the project:
+
 1.Node.js
+
 2.React
+
 3.MongoDB Compass and MongoDB Shell
 
 How to setup the application:
