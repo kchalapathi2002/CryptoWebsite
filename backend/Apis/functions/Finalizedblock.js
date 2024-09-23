@@ -13,5 +13,4 @@ async function getLatestBlockNumber() {
     }
 }
 
-
-module.exports = { getLatestBlockNumber };
+module.exports = getLatestBlockNumber ;

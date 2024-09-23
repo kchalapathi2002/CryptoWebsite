@@ -1,5 +1,5 @@
 const express = require('express');
-const { Signinauth } = require('./functions/Signinauth');
+const Signinauth = require('./functions/Signinauth');
 
 const router = express.Router();
 

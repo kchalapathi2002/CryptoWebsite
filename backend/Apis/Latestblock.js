@@ -1,5 +1,5 @@
 const express = require('express');
-const { getLatestBlockNumber } = require('./functions/Finalizedblock');
+const getLatestBlockNumber = require('./functions/Finalizedblock');
 
 const router = express.Router();
 

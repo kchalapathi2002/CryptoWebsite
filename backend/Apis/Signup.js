@@ -1,5 +1,5 @@
 const express = require('express');
-const { Signupauth } = require('./functions/Signupauth')
+const Signupauth = require('./functions/Signupauth')
 
 const router = express.Router();
 

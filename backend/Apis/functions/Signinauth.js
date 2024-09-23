@@ -18,4 +18,4 @@ async function Signinauth(email, password) {
   }
 }
 
-module.exports = { Signinauth };
+module.exports = Signinauth ;

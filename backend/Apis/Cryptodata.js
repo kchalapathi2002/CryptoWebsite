@@ -1,5 +1,5 @@
 const express = require('express');
-const { fetchCoinData } = require('./functions/fromCoinGecko');
+const fetchCoinData = require('./functions/fromCoinGecko');
 
 const router = express.Router();
 
@@ -15,7 +15,5 @@ router.get('/', async (req, res) => {
     res.json({ message: 'Error fetching crypto data' });
   }
 });
-
-
 
 module.exports = router;

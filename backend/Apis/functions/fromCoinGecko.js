@@ -66,4 +66,4 @@ async function fetchCoinData(sortdata, sortvalue, filter1) {
   }
 }
 
-module.exports = { fetchCoinData };
+module.exports = fetchCoinData ;
