@@ -58,7 +58,7 @@ cd backend
    
 install required dependencies using npm install:
    
-    express,mongoose,cors,dotenv...
+    express,mongoose,cors,web3,dotenv...
       
 3.Navigate to frontend
 
