@@ -102,7 +102,7 @@ const CryptoData = () => {
 
   return (
     <div className="main">
-      {!error ? (Cryptodata.length === 0 ? (
+      {!error ? (!status ? (
         <p className='mainpara' >Loading...</p>
       ) : (
         <div className="cryptodata">
