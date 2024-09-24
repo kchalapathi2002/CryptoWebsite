@@ -21,16 +21,16 @@ async function fetchCoinData(sortdata, sortvalue, filter1) {
       percentChange1h: data.price_change_percentage_1h_in_currency,
       percentChange24h: data.price_change_percentage_24h
     }));
-    try{
-    for (let coin of result) {
-      await newCoin.findOneAndUpdate({ id: coin.id }, coin, { upsert: true, new: true });
-    }
+    try {
+      for (let coin of result) {
+        await newCoin.findOneAndUpdate({ id: coin.id }, coin, { upsert: true, new: true });
+      }
 
-    await setTime.findOneAndUpdate({ fieldfor: 'cryptodata' }, { fieldfor: 'cryptodata', timeStamp: new Date().toLocaleString() }, { upsert: true, new: true });
-  }
-  catch (error) {
-    console.error("unable to save data to DB");
-  }
+      await setTime.findOneAndUpdate({ fieldfor: 'cryptodata' }, { fieldfor: 'cryptodata', timeStamp: new Date().toLocaleString() }, { upsert: true, new: true });
+    }
+    catch (error) {
+      console.error("unable to save data to DB");
+    }
 
     if (filter1) {
       result = result.filter(coin => (coin.id.toLowerCase().includes(filter1.toLowerCase()) || coin.name.toLowerCase().includes(filter1.toLowerCase())));
@@ -51,28 +51,28 @@ async function fetchCoinData(sortdata, sortvalue, filter1) {
 
   }
   catch (error) {
-    try{
-    const lastUpdated = (await setTime.findOne({ fieldfor: 'cryptodata' })).timeStamp;
-    if (sortvalue == 0) {
-      let result = await newCoin.find();
+    try {
+      const lastUpdated = (await setTime.findOne({ fieldfor: 'cryptodata' })).timeStamp;
+      if (sortvalue == 0) {
+        let result = await newCoin.find();
+        if (filter1) {
+          result = result.filter(coin => (coin.id.toLowerCase().includes(filter1.toLowerCase()) || coin.name.toLowerCase().includes(filter1.toLowerCase())));
+          return { fetched: 'false', data: result, time: lastUpdated };
+        }
+        return { fetched: 'false', data: result, time: lastUpdated };
+      }
+
+      let result = await newCoin.find().sort({ [sortdata]: sortvalue });
       if (filter1) {
         result = result.filter(coin => (coin.id.toLowerCase().includes(filter1.toLowerCase()) || coin.name.toLowerCase().includes(filter1.toLowerCase())));
-        return { fetched: 'false', data: result, time: lastUpdated };
       }
       return { fetched: 'false', data: result, time: lastUpdated };
     }
-
-    let result = await newCoin.find().sort({ [sortdata]: sortvalue });
-    if (filter1) {
-      result = result.filter(coin => (coin.id.toLowerCase().includes(filter1.toLowerCase()) || coin.name.toLowerCase().includes(filter1.toLowerCase())));
+    catch (error) {
+      console.error("Failed to fetch data from both Api and database", error);
     }
-    return { fetched: 'false', data: result, time: lastUpdated };
-  }
-  catch (error) {
-    console.error("Failed to fetch data from both Api and database",error);
-  }
 
   }
 }
 
-module.exports = fetchCoinData ;
+module.exports = fetchCoinData;
