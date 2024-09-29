@@ -50,7 +50,7 @@ Prerequisite for running the project:
 How to setup the application:
 1.Clone the repository:
 
-   git clone https://github.com/kchalapathi2002/CryptoWebsite.git
+    git clone https://github.com/kchalapathi2002/CryptoWebsite.git
    
 2.Navigate to backend:
 
@@ -75,6 +75,7 @@ cd backend>
     node index.js
    
 cd frontend>
+
     npm start
 
 How to use the application:
