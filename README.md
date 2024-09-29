@@ -54,7 +54,7 @@ How to setup the application:
    
 2.Navigate to backend:
 
-cd backend
+    cd backend
    
 install required dependencies using npm install:
    
@@ -62,7 +62,7 @@ install required dependencies using npm install:
       
 3.Navigate to frontend
 
-cd frontend
+    cd frontend
    
 install required dependencies using npm install:
    
@@ -70,9 +70,12 @@ install required dependencies using npm install:
       
 4.Run the project:
 
-cd backend>node index.js
+cd backend>
+
+    node index.js
    
-cd frontend>npm start
+cd frontend>
+    npm start
 
 How to use the application:
 
